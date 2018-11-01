@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t videoblocks/phpstorm .
+docker build -t videoblocks/docker-php .
