@@ -39,6 +39,8 @@ From PhpStorm we use a docker interpreter to run PhpUnit tests, so you will need
             - MYSQL_WRITE_HOST: host.docker.internal
             - MYSQL_READ_HOST: host.docker.internal
             - ACCOUNT_SERVICE_CLIENT_BASE_URL: host.docker.internal:9087
+            - AUTH_SERVICE_CLIENT_BASE_URL: host.docker.internal:9087
+            - SEARCH_SERVICE_CLIENT_BASE_URL: host.docker.internal:9000
 
     ![PHP CLI Interpreter Config](docs/images/phpstorm-php-interpreter-config.png)
 
@@ -53,6 +55,8 @@ From PhpStorm we use a docker interpreter to run PhpUnit tests, so you will need
             - MYSQL_WRITE_HOST: host.docker.internal
             - MYSQL_READ_HOST: host.docker.internal
             - ACCOUNT_SERVICE_CLIENT_BASE_URL: host.docker.internal:9087
+            - AUTH_SERVICE_CLIENT_BASE_URL: host.docker.internal:9087
+            - SEARCH_SERVICE_CLIENT_BASE_URL: host.docker.internal:9000
     - PHPUnit library: "Use Composer autoloader"
     - Path to script: "/opt/project/vendor/autoload.php" (it should recognize PHPUnit version 6.4.3 and notify you)
     - **OK**
