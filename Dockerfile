@@ -27,3 +27,8 @@ RUN apk add --no-cache bzip2-dev \
 # Soap
 RUN apk add --no-cache libxml2-dev \
     && docker-php-ext-install soap
+
+# Kafka
+RUN apk add librdkafka-dev \
+    && pecl install rdkafka \
+    && docker-php-ext-enable rdkafka
