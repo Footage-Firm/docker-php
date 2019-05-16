@@ -32,3 +32,6 @@ RUN apk add --no-cache libxml2-dev \
 RUN apk add librdkafka-dev \
     && pecl install rdkafka \
     && docker-php-ext-enable rdkafka
+
+# Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
