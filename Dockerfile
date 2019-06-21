@@ -1,5 +1,5 @@
 # https://hub.docker.com/_/php/
-FROM php:7.1-alpine
+FROM php:7.3-alpine
 
 RUN apk add --no-cache $PHPIZE_DEPS
 
@@ -7,7 +7,7 @@ RUN apk add --no-cache $PHPIZE_DEPS
 RUN docker-php-ext-install sockets
 
 # Xdebug
-RUN pecl install xdebug-2.6.0
+RUN pecl install xdebug
 RUN docker-php-ext-enable xdebug
 
 # Imagick
@@ -32,3 +32,6 @@ RUN apk add --no-cache libxml2-dev \
 RUN apk add librdkafka-dev \
     && pecl install rdkafka \
     && docker-php-ext-enable rdkafka
+
+# Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
