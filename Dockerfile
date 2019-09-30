@@ -40,3 +40,6 @@ RUN docker-php-ext-enable xdebug
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+
+# PCNTL
+RUN docker-php-ext-install pcntl
