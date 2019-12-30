@@ -38,6 +38,10 @@ RUN apk add librdkafka-dev=1.2.0-r0 --repository=http://dl-cdn.alpinelinux.org/a
 RUN pecl install xdebug
 RUN docker-php-ext-enable xdebug
 
+# Redis
+RUN pecl install redis
+RUN docker-php-ext-enable redis
+
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 

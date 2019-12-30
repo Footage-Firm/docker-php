@@ -2,6 +2,9 @@
 
 Use this Dockerfile for running php in a development environment.
 
+## Updating the Image
+Dockerhub is set to auto-build when the Dockerfile is changed and committed to master.
+
 ## Setup PHP and PHPUnit Interpreters for PhpStorm
 From PhpStorm we use a docker interpreter to run PhpUnit tests, so you will need a docker image with PHP 7.1 and xdebug installed and then configure PhpStorm to use it.
 
