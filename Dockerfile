@@ -1,5 +1,5 @@
 # https://hub.docker.com/_/php/
-FROM php:7.3-alpine
+FROM php:7.4-alpine
 
 RUN apk update
 
