@@ -30,7 +30,7 @@ RUN apk add --no-cache libxml2-dev \
     && docker-php-ext-install soap
 
 # Kafka
-RUN apk add librdkafka-dev=1.3.0-r0 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
+RUN apk add librdkafka-dev=1.4.0-r0 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
     && pecl install rdkafka \
     && docker-php-ext-enable rdkafka
 
