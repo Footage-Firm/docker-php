@@ -26,21 +26,20 @@ From PhpStorm we use a docker interpreter to run PhpUnit tests, so you will need
     - Remote: Docker
     - Server: "Docker Server" (your docker server from above)
     - Image name: "videoblocks/docker-php"
-    - PHP executable: "php" (it should recognize php version 7.1.16 and Xdebug 2.6.0 and notify you)
+    - PHP executable: "php" (it should recognize php version 7.4.4 and Xdebug 2.9.0 and notify you)
     - Debugger extension: "/usr/local/lib/php/extensions/no-debug-non-zts-20160303/xdebug.so"
     - **OK**
 
     ![Docker CLI Interpreter Config](docs/images/phpstorm-docker-remote-cli-interpreter-config.png)
 
 1. Back in _Languages & Frameworks_ > _PHP_, set the following:
-    - PHP language level: 7.1
+    - PHP language level: 7.4
     - Path mappings: "<Project root> -> /opt/project"
     - Docker container: _Click `...`_
         - Network mode: bridge
         - Volume bindings: /opt/project (Container path) > <Your project directory> (Host path)
         - Environment variables:
-            - MYSQL_WRITE_HOST: host.docker.internal
-            - MYSQL_READ_HOST: host.docker.internal
+            - DB_HOST: host.docker.internal
             - ACCOUNT_SERVICE_CLIENT_BASE_URL: host.docker.internal:9087
             - AUTH_SERVICE_CLIENT_BASE_URL: host.docker.internal:9087
             - SEARCH_SERVICE_CLIENT_BASE_URL: host.docker.internal:9000
@@ -55,13 +54,12 @@ From PhpStorm we use a docker interpreter to run PhpUnit tests, so you will need
         - Network mode: bridge
         - Volume bindings: /opt/project (Container path) > <Your project directory> (Host path)
         - Environment variables:
-            - MYSQL_WRITE_HOST: host.docker.internal
-            - MYSQL_READ_HOST: host.docker.internal
+            - DB_HOST: host.docker.internal
             - ACCOUNT_SERVICE_CLIENT_BASE_URL: host.docker.internal:9087
             - AUTH_SERVICE_CLIENT_BASE_URL: host.docker.internal:9087
             - SEARCH_SERVICE_CLIENT_BASE_URL: host.docker.internal:9000
     - PHPUnit library: "Use Composer autoloader"
-    - Path to script: "/opt/project/vendor/autoload.php" (it should recognize PHPUnit version 6.4.3 and notify you)
+    - Path to script: "/opt/project/vendor/autoload.php" (it should recognize PHPUnit version 8.5.8 and notify you)
     - **OK**
 
     ![PHP CLI Interpreter Config](docs/images/phpstorm-phpunit-interpreter-config.png)
