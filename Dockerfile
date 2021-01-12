@@ -47,3 +47,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
 
 # PCNTL
 RUN docker-php-ext-install pcntl
+
+# Intl
+RUN apk add --no-cache icu-dev \
+    && docker-php-ext-install intl
